@@ -10,14 +10,22 @@ app.use(cors({
   }));
 app.use(express.json());
 let arr=[];
+let arr_data=[];
 app.post("/send-data", (req, res) => {
     console.log("Received data:", req.body);
-    arr.push(req.body   ); 
+    arr.push(req.body); 
     res.json({ message: "Data received successfully" });
 });
-
+app.post("/data-transfer",(req,res)=>{
+    console.log("done !",req.body)
+    arr_data.push(req.body);
+    res.json({message:"Data done !"})
+})
 app.get("/get-command", (req, res) => {
-    res.json(arr); 
+    res.json(arr);
 });
+app.get("/motor-data",(req,res)=>{
+    res.json(arr_data);
+})
 
 app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));
