@@ -12,7 +12,7 @@ app.use(express.json());
 let arr=[];
 app.post("/send-data", (req, res) => {
     console.log("Received data:", req.body);
-    arr.push(req.body);
+    arr.push(req.body   ); 
     res.json({ message: "Data received successfully" });
 });
 
