@@ -25,7 +25,7 @@ app.get("/get-command", (req, res) => {
     res.json(arr);
 });
 app.get("/motor-data",(req,res)=>{
-    res.json(arr_data);
+    res.json(arr_data[arr_data.length-1]);
 })
 
 app.listen(PORT, HOST, () => console.log(`Server running on http://${HOST}:${PORT}`));
