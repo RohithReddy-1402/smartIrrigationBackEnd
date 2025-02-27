@@ -32,6 +32,7 @@ app.post("/motor-post",(req,res)=>{
     let y=req.body;
     motor_status=y
 
+    
 })
 app.get("/motor-get",(req,res)=>{
     res.json(motor_status);
